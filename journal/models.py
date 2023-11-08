@@ -14,7 +14,7 @@ class Journal(models.Model):
     mood = models.CharField(max_length=100, choices=MOOD_CHOICES)
     activities = models.TextField(blank=True, null=True)
     photo = models.URLField(blank=True, null=True)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField()
 
     def __str__(self):
         return f"Journal Entry on {self.date.strftime('%Y-%m-%d')}"
