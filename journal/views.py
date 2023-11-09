@@ -1,16 +1,13 @@
 from django.shortcuts import render
-
-# Create your views here.
-from .models import Journal
 from rest_framework import viewsets
-from rest_framework import permissions
+from .models import Journal
 from .serializers import JournalSerializer
 
-
 class JournalViewSet(viewsets.ModelViewSet):
-    ## The Main Query for the index route
     queryset = Journal.objects.all()
-    # The serializer class for serializing output
     serializer_class = JournalSerializer
-    # optional permission class set permission level
-    permission_classes = [permissions.AllowAny] #Coule be [permissions.IsAuthenticated]
+
+    def get_object(self):
+        # This method is used to retrieve the specific journal object
+        # Override if necessary to handle lookup differently
+        return super().get_object()
