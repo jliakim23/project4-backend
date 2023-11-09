@@ -16,8 +16,8 @@ class Journal(models.Model):
     photo = models.URLField(blank=True, null=True)
     date = models.DateField()
 
-    def __str__(self):
-        return f"Journal Entry on {self.date.strftime('%Y-%m-%d')}"
+    # def __str__(self):
+    #     return f"Journal Entry on {self.date.strftime('%Y-%m-%d')}"
 
-    class Meta:
-        verbose_name_plural = "Journal Entries"
+    # class Meta:
+    #     verbose_name_plural = "Journal Entries"

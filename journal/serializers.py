@@ -5,4 +5,4 @@ from django.contrib.auth.models import User
 class JournalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Journal
-        fields = '__all__'
+        fields = ['id', 'mood', 'activities', 'photo', 'date']
